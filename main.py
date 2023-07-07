@@ -2,6 +2,7 @@ import numpy as np
 from fastapi import FastAPI, File, UploadFile
 import cv2
 from domain.theater import theater_router
+from domain.image import image_router
 from starlette.middleware.cors import CORSMiddleware
 
 
@@ -16,15 +17,4 @@ app.add_middleware(
 )
 
 app.include_router(theater_router.router)
-
-
-@app.get("/test")
-async def test(file: UploadFile = File(...)):
-    contents = await file.read()
-    nparr = np.fromstring(contents, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-
-    cv2.imshow("good", img)
-
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+app.include_router(image_router.router)

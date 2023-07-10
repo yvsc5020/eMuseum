@@ -8,6 +8,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
+import requests
+from bs4 import BeautifulSoup as bs
 
 
 def getData(dataList):
@@ -15,14 +17,32 @@ def getData(dataList):
 
     for item in liList:
         dataDict = {'id': item.find_element(By.CLASS_NAME, "name").find_element(By.TAG_NAME, "a")
-        .get_attribute("href").split("?performanceId=")[1],
-                    'poster': item.find_element(By.TAG_NAME, "img").get_attribute("src"),
+                    .get_attribute("href").split("?performanceId=")[1],
+                    'image': item.find_element(By.TAG_NAME, "img").get_attribute("src"),
                     'title': item.find_element(By.CLASS_NAME, "name").text,
                     'date': item.find_element(By.CLASS_NAME, "date").text,
                     'place': item.find_element(By.CLASS_NAME, "place").text,
                     'genre': item.find_element(By.CLASS_NAME, "genre ").text,
                     'time': item.find_element(By.CLASS_NAME, "time ").text,
                     'price': item.find_element(By.CLASS_NAME, "price").text}
+
+        url = "https://www.ntok.go.kr/kr/Ticket/Performance/Details?performanceId=" + dataDict['id']
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                                 "Chrome/109.0.0.0 Safari/537.36"}
+
+        html = requests.get(url, headers).text
+        soup = bs(html, 'html.parser')
+
+        prd_txt = soup.find("div", {"class": "prd_txt_wrap"}).find("div", {"class": "prd_txt"}).find_all('span')
+        des = ""
+        for idx, prd in enumerate(prd_txt):
+            if idx <= 1:
+                des = des + prd.text.strip() + " "
+            else:
+                des += prd.text.strip()
+
+        des.replace("  ", " ")
+        dataDict['des'] = des
 
         dataList.append(dataDict)
 
@@ -70,10 +90,10 @@ def getList():
 
         getData(dataList)
 
-    file_path = "./models/theater_data.json"
+    file_path = "domain/musical/models/musical_data.json"
 
     with open(file_path, 'w', encoding='utf-8') as file:
-        json.dump(dataList, file, indent=2)
+        json.dump(dataList, file, indent=2, ensure_ascii=False)
 
     print(dataList)
 

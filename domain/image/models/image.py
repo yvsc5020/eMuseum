@@ -70,7 +70,25 @@ def getResult(file):
                       'is the only geodesic that has survived to this day. During the Joseon Dynasty, rain gauges '
                       'were made centrally and sent to not only the Chungcheonggamyeong but also to the gaengyongs in '
                       'the eight provinces, and observers in each region reported rainfall to the center.',
-        'ten_stonetower': '',
+        'ten_stonetower': 'In the Goryeo Dynasty, following the style of stone pagodas in the Silla Dynasty, '
+                          'flat square stone pagodas or polygonal stone pagodas appeared in a new style, but unlike '
+                          'these, a special form is the ten-story stone pagoda of Gyeongcheonsaji Temple in Kaesong. '
+                          'This pagoda was originally left at Gyeongcheonsaji Temple in Gaepung-gun, Gyeonggi-do, '
+                          'but was illegally taken to Japan and then restored to Gyeongbokgung Palace in Seoul. The '
+                          'entire base is made of gray marble, and the pagoda body and upper ring are built on top of '
+                          'the base. The pagoda is noteworthy for its special style in terms of plan and structure, '
+                          'and for its beautiful overall balance. The plane of the base has three levels in the shape '
+                          'of an aja, and the pagoda body has the same plane as the base on the first, second, '
+                          'and third floors, but narrows as it goes up. From the fourth floor onward, the pagoda is '
+                          'square, and each floor has a railing under the jade body and a carved dugong (枓栱) under '
+                          'the jade gate. The upper surface shows the shape of an octagonal roof and a giwat bone. '
+                          'The base and pagoda shrine are richly decorated with Buddhas, Bodhisattvas, figures, '
+                          'dragons, and heavenly beings, and the carvings are exquisite. Although stone pagodas of '
+                          'this type reappeared in the early Joseon Dynasty, they are rare and unprecedented. The '
+                          'Jade God Imatdol on the first floor bears the inscription "Jotapyeong" (造塔銘), which means '
+                          '"designated eight years," indicating that the pagoda was built in 1348, the fourth year of '
+                          'King Chungmok of Goryeo. Given the political environment at the time, it is believed that '
+                          'the pagoda was heavily influenced by new Chinese pagodas.',
         'gold_crown': "It was discovered in 1921 in Geumgwanchong, Noseo-dong, Gyeongju, Gyeongsangbuk-do. About 10,"
                       "000 items, including pure gold products, earthenware, bronze, jade, and weapons, "
                       "were unearthed at Geumgwanchong, but it was this gold pipe that attracted the most attention. "

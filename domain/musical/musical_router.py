@@ -1,18 +1,18 @@
 from fastapi import APIRouter
-from .models import theater
+from .models import musical
 
 router = APIRouter(
-    prefix="/theater",
+    prefix="/musical",
 )
 
 
 @router.get('/list')
 def theater_list():
-    data = theater.getList()
+    data = musical.getList()
     return data
 
 
 @router.get('/detail')
 def theater_detail(id):
-    data = theater.getDetail(id)
+    data = musical.getDetail(id)
     return data

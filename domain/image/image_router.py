@@ -12,8 +12,3 @@ async def image_classification(file: UploadFile = File(...)):
     result = image.getResult(request_image)
 
     return result
-
-
-@router.get('/detail')
-def theater_detail():
-    return "good"

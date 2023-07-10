@@ -13,5 +13,6 @@ def theater_list():
 
 
 @router.get('/detail')
-def theater_detail():
-    return "good"
+def theater_detail(id):
+    data = theater.getDetail(id)
+    return data

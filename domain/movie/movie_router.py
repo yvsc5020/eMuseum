@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-from .models import musical
+from .models import movie
 
 router = APIRouter(
-    prefix="/musical",
+    prefix="/movie",
 )
 
 
 @router.get('/list')
 def theater_list():
-    data = musical.getList()
+    data = movie.getList()
     return data

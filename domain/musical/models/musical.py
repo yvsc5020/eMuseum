@@ -1,10 +1,8 @@
 import json
-from bs4 import BeautifulSoup as bs
-import requests
 
 
 def getList():
-    with open('domain/musical/models/musical_data.json') as f:
+    with open('domain/musical/models/musical_data.json', encoding='UTF8') as f:
         data = json.load(f)
 
     return data

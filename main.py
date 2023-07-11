@@ -18,3 +18,4 @@ app.add_middleware(
 app.include_router(musical_router.router)
 app.include_router(image_router.router)
 app.include_router(movie_router.router)
+app.include_router(musical_router.router)

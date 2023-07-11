@@ -95,8 +95,8 @@ def getList():
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(dataList, file, indent=2, ensure_ascii=False)
 
-    print(dataList)
 
+getList()
 
 schedule.every().day.at("01:00").do(getList)
 

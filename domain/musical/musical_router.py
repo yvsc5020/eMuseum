@@ -7,6 +7,6 @@ router = APIRouter(
 
 
 @router.get('/list')
-def theater_list():
+def musical_list():
     data = musical.getList()
     return data

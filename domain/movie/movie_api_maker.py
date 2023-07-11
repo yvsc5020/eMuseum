@@ -53,6 +53,8 @@ def getList():
         json.dump(dataList, file, indent=2, ensure_ascii=False)
 
 
+getList()
+
 schedule.every().day.at("01:00").do(getList)
 
 while True:

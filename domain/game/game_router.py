@@ -1,12 +1,12 @@
 from fastapi import APIRouter
-from .models import music
+from .models import game
 
 router = APIRouter(
-    prefix='/music'
+    prefix='/game'
 )
 
 
 @router.get('/list')
-def music_list():
-    data = music.getList()
+def game_list():
+    data = game.getList()
     return data

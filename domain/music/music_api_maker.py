@@ -28,7 +28,7 @@ def getData(music, dataList):
         'album': soup.find('dl', {'class': 'list'}).find_all('dd')[0].text.strip(),
         'date': soup.find('dl', {'class': 'list'}).find_all('dd')[1].text.strip(),
         'genre': soup.find('dl', {'class': 'list'}).find_all('dd')[2].text.strip(),
-        'text': soup.find('div', {'class': 'lyric'}).text.strip()
+        'des': soup.find('div', {'class': 'lyric'}).text.strip()
     }
 
     dataList.append(dataDict)

@@ -4,6 +4,7 @@ from domain.image import image_router
 from domain.movie import movie_router
 from domain.music import music_router
 from domain.game import game_router
+from domain.location import location_router
 from starlette.middleware.cors import CORSMiddleware
 
 
@@ -22,3 +23,5 @@ app.include_router(image_router.router)
 app.include_router(movie_router.router)
 app.include_router(music_router.router)
 app.include_router(game_router.router)
+app.include_router(location_router.router)
+

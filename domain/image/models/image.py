@@ -129,7 +129,7 @@ def getResult(file):
         'image': img,
         'korDes': des,
         'engDes': eng_des[eng_name],
-        'youtubeLink' : []
+        'youtubeLink': []
     }
 
     return data

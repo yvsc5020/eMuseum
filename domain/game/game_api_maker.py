@@ -16,6 +16,7 @@ def getData(game, dataList):
 
     dataDict = {
         'title': soup.find('h2', {'class': 'h_gm'}).text.strip(),
+        'image': soup.find('div', {'class': 'gameThumb'}).find('img')['src'],
         'genre': soup.find_all('li', {'class': 'rightA'})[1].text.strip(),
         'make': soup.find_all('li', {'class': 'rightA'})[2].text.strip(),
         'service': soup.find_all('li', {'class': 'rightA'})[3].text.strip(),

@@ -18,7 +18,7 @@ def getData(music, dataList):
     title.find('strong').decompose()
 
     for br in soup.find('div', {'class': 'lyric'}).find_all('br'):
-        br.replace_with("\n")
+        br.replace_with("\n ")
 
     dataDict = {
         'id': music,
